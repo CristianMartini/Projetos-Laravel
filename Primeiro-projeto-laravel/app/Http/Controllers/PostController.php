@@ -17,9 +17,6 @@ class PostController extends Controller
     }
     public function store(Request $request)
     {
-        $newPost = new Post();
-        $newPost->title = $request->title;
-        $newPost->content = $request->content;
-        $newPost->save();
+        Post:: create ( $request->all());
     }
 }
