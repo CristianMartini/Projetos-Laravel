@@ -23,7 +23,7 @@
 
 @endforeach
 <a href="{{ route('tags.create') }}">Criar Nova tag</a>
-
+https://thyago-quintas.gitbook.io/laravel/aula-04-crud/projeto-04-blog
 </body>
 
 </html>
