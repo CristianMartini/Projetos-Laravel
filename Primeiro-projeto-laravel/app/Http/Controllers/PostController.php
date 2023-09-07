@@ -35,5 +35,20 @@ class PostController extends Controller
         Post::findOrFail($id)->update($request->all());
         return redirect( route('posts.show',$id));
     }
-
+    //Função para exibir uma página de confirmação de exclusão de uma postagem
+public function deleteConfirmation($id){
+    //Recebe o ID da postagem a ser excluída como parâmetro
+    $post = Post::findOrFail($id);
+    //Retorna uma view que exibe uma mensagem de confirmação
+    return view('posts.deleteConfirmation', compact('post'));
+}
+    //Função para processar a exclusão de uma postagem
+public function destroy($id){
+    //Recebe o ID da postagem a ser excluída como parâmetro
+    $post = Post::findOrFail($id);
+    //Exclui a postagem do banco de dados
+    $post->delete();
+    //Redireciona o usuário para a listagem de posts
+    return redirect()->route('posts.index');
+}
 }

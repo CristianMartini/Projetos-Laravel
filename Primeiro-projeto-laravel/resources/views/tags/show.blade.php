@@ -9,8 +9,8 @@
 <body>
    
     
-        <h2>{{ $post->title }}</h2>
-        <p> {{$post-> content}} </p>
-        <a href="{{ route('posts.index') }}">Voltar para a Listagem de Posts</a>
+        <h2>{{ $tags->text}}</h2>
+        <a href="{{ route('tags.index') }}">Voltar para a Listagem de Tags</a>
+
 </body>
 </html>
