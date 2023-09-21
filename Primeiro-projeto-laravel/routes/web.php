@@ -3,6 +3,7 @@ use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +38,6 @@ Route::put('/tags/{id}', [TagController::class, 'update'])->name('tags.update');
 Route::get('/tags/{id}/delete', [PostController::class, 'deleteConfirmation'])->name('tags.delete.confirmation');
 Route::delete('/tags/{id}', [PostController::class, 'destroy'])->name('tags.destroy');
 
+
+
+Route::resource('categories', CategoryController::class);
